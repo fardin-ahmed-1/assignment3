@@ -1,11 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Tailwind css and daisyUi link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.4.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#F85559',
+                        'second-color': '#121212',
+                        'sub-heading-color': '#121212CC',
+                        'heading-color': '#121212',
+                        'text-color': '#12121299',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Icon link -->
+    <script src="https://kit.fontawesome.com/96883a21b6.js" crossorigin="anonymous"></script>
+
+    <!-- google font link -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+        .font-noto {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="font-noto">
+    <header class="container mx-auto">
+
+        <div class="flex justify-between  p-[0.5rem] items-center bg-primary px-7 rounded-full mx-2">
+
+
+            <div class="hidden lg:block">
+                <ul class="flex space-x-7 pl-4 text-white text-lg font-family font-normal">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">All Fruits</a></li>
+                </ul>
+            </div>
+
+
+
+
+            <div class="space-x-2 items-center flex">
+                <img class="inline-block p-2" src="./images/logo.png" alt="">
+                <a class="normal-case font-bold text-4xl text-white">Fruit Burst</a>
+            </div>
+
+
+            <div class=" flex items-center">
+                <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost text-white text-2xl lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class=" w-48  dropdown-content right-0 mt-3 relative z-[1] p-4 shadow bg-base-100 rounded-box text-center text-lg font-family font-normal space-y-3">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">All Fruits</a></li>
+                        <li><input type="search" placeholder="Search here"
+                                class="input w-full max-w-lg rounded-full focus:outline-none border-1 border-primary " />
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hidden lg:block">
+                    <input type="search" placeholder="Search here"
+                        class="input w-full max-w-lg rounded-full focus:outline-none border-0 relative " />
+
+                    <i class="fa-solid fa-magnifying-glass absolute top-10 right-24"></i>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+    <main class="container mx-auto">
+        <!--===Banner section=== -->
+        <section class="mt-12 mx-2">
+            <div class="carousel w-full">
+
+                <div id="slide1" class="carousel-item relative rounded-lg w-full text-center flex justify-center"
+                    style="background-image: url(./images/banner1.png); background-size:cover; background-size: cover; background-position: center center">
+                    <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+
+                    <div class="space-y-3 font-nato z-10 py-20 lg:pt-20 lg:pb-48">
+                        <h1 class="font-bold text-4xl lg:text-5xl text-white">Exotic tastes at your <br /> doorstep</h1>
+                        <p class="font-normal text-base lg:text-xl text-white">We supply highly quality organic products
+                        </p>
+                        <button class="btn bg-primary text-white border-0 hover:bg-white hover:text-primary">Shop
+                            Now</button>
+
+                    </div>
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide4"
+                            class="btn btn-circle bg-second-color text-white border-0 hover:bg-primary">❮</a>
+                        <a href="#slide2"
+                            class="btn btn-circle bg-second-color text-white border-0 hover:bg-primary">❯</a>
+                    </div>
+                </div>
+
+                <div id="slide2" class="carousel-item relative rounded-lg w-full text-center flex justify-center"
+                    style="background-image: url(./images/banner2.png); background-size:cover; background-size: cover; background-position: center center">
+                    <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+
+                    <div class="space-y-3 font-nato z-10 py-20 lg:pt-20 lg:pb-48">
+                        <h1 class="font-bold text-4xl lg:text-5xl text-white">Exotic tastes at your <br /> doorstep</h1>
+                        <p class="font-normal text-base lg:text-xl text-white">We supply highly quality organic products
+                        </p>
+                        <button class="btn bg-primary text-white border-0 hover:bg-white hover:text-primary">Shop
+                            Now</button>
+                    </div>
+
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide1"
+                            class="btn btn-circle bg-second-color text-white border-0 hover:bg-primary">❮</a>
+                        <a href="#slide3"
+                            class="btn btn-circle bg-second-color text-white border-0 hover:bg-primary">❯</a>
+                    </div>
+                </div>
+                <div id="slide3" class="carousel-item relative rounded-lg w-full text-center flex justify-center"
+                    style="background-image: url(./images/banner3.png); background-size:cover; background-size: cover; background-position: center center">
+                    <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+
+                    <div class="space-y-3 font-nato z-10 py-20 lg:pt-20 lg:pb-48">
+                        <h1 class="font-bold text-4xl lg:text-5xl text-white">Exotic tastes at your <br /> doorstep</h1>
+                        <p class="font-normal text-base lg:text-xl text-white">We supply highly quality organic products
+                        </p>
+                        <button class="btn bg-primary text-white border-0 hover:bg-white hover:text-primary">Shop
+                            Now</button>
+
+                    </div>
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide2"
+                            class="btn btn-circle bg-second-color text-white border-0 hover:bg-primary">❮</a>
+                        <a href="#slide4"
+                            class="btn btn-circle bg-second-color text-white border-0 hover:bg-primary">❯</a>
+                    </div>
+                </div>
+                <div id="slide4" class="carousel-item relative rounded-lg w-full text-center flex justify-center"
+                    style="background-image: url(./images/banner4.png); background-size:cover; background-size: cover; background-position: center center">
+                    <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
+
+                    <div class="space-y-3 font-nato z-10 py-20 lg:pt-20 lg:pb-48">
+                        <h1 class="font-bold text-4xl lg:text-5xl text-white">Exotic tastes at your <br /> doorstep</h1>
+                        <p class="font-normal text-base lg:text-xl text-white">We supply highly quality organic products
+                        </p>
+                        <button class="btn bg-primary text-white border-0 hover:bg-white hover:text-primary">Shop
+                            Now</button>
+
+                    </div>
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide3"
+                            class="btn btn-circle bg-second-color text-white border-0 hover:bg-primary">❮</a>
+                        <a href="#slide1"
+                            class="btn btn-circle bg-second-color text-white border-0 hover:bg-primary">❯</a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class=" hidden lg:block lg:flex justify-between items-center shadow-lg bg-white rounded-lg p-6 lg:-mt-24 z-20 w-4/5 mx-auto relative">
+
+                <div>
+                    <img src="./images/fruit1.png" alt="">
+                    <h2 class="text-sub-heading-color text-lg text-center font-normal">Strawberry</h2>
+                </div>
+                <div>
+                    <img src="./images/fruit2.png" alt="">
+                    <h2 class="text-sub-heading-color text-lg text-center font-normal">Strawberry</h2>
+                </div>
+                <div>
+                    <img src="./images/fruit3.png" alt="">
+                    <h2 class="text-sub-heading-color text-lg text-center font-normal">Strawberry</h2>
+                </div>
+                <div>
+                    <img src="./images/fruit4.png" alt="">
+                    <h2 class="text-sub-heading-color text-lg text-center font-normal">Strawberry</h2>
+                </div>
+                <div>
+                    <img src="./images/fruit5.png" alt="">
+                    <h2 class="text-sub-heading-color text-lg text-center font-normal">Strawberry</h2>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Best offer section | Deal of the day -->
+        <section class="mt-16 lg:mt-32  mx-2">
+            <div class="flex flex-col lg:flex-row justify-between gap-x-24 items-center">
+
+                <div class="space-y-2 text-center lg:text-start mb-5">
+                    <h1 class="text-heading-color text-4xl lg:text-5xl font-bold">Deal of the day</h1>
+                    <p class="text-text-color text-base lg:text-lg font-normal">Contrary to popular belief, is not simply random
+                        text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000
+                        years old.</p>
+                </div>
+
+                <!-- Counder items -->
+
+                <div>  
+                    <div class="grid grid-flow-col gap-5 text-center auto-cols-max">
+                        <!-- Day -->
+                        <div class="flex flex-col">
+                            <div class="flex">
+                                <span class="countdown">
+                                    <span class="text-heading-color text-4xl lg:text-6xl font-bold"
+                                        style="--value:29;"></span>
+                                </span>
+                                <span class="text-heading-color text-4xl lg:text-6xl font-bold"> :</span>
+                            </div>
+                            <span class="text-text-color font-medium text-lg text-center">Days</span>
+                        </div> 
+
+                        <!-- Hours -->
+                        <div class="flex flex-col">
+                            <div class="flex">
+                                <span class="countdown">
+                                    <span class="text-heading-color text-4xl lg:text-6xl font-bold"
+                                        style="--value:15;"></span>
+                                </span>
+                                <span class="text-heading-color text-4xl lg:text-6xl font-bold">:</span>
+                            </div>
+                            <span class="text-text-color font-medium text-lg text-center">Hours</span>
+                        </div> 
+
+                        <!-- Minutes -->
+                        <div class="flex flex-col">
+                            <div class="flex">
+                                <span class="countdown">
+                                    <span class="text-heading-color text-4xl lg:text-6xl font-bold"
+                                        style="--value:25;"></span>
+                                </span>
+                                <span class="text-heading-color text-4xl lg:text-6xl font-bold">:</span>
+                            </div>
+                            <span class="text-text-color font-medium text-lg text-center">Minutes</span>
+                        </div> 
+                        <!-- Seconds -->
+                        <div class="flex flex-col">
+                                <span class="countdown">
+                                    <span class="text-heading-color text-4xl lg:text-6xl font-bold"
+                                        style="--value:08;"></span>
+                                </span>
+                            <span class="text-text-color font-medium text-lg text-center">Seconds</span>
+                        </div> 
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product items -->
+            <div class="mt-12 grid grid-cols-4 gap-x-4">
+                <div class="card card-compact p-12 border-2 ">
+                    <img src="./images/fruit6.png" alt="Shoes" />
+                    <div class="card-body">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions justify-center">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div>
+                <div class="card card-compact p-12 ">
+                    <img src="./images/fruit6.png" alt="Shoes" />
+                    <div class="card-body">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions justify-center">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div>
+                <div class="card card-compact p-12 ">
+                    <img src="./images/fruit6.png" alt="Shoes" />
+                    <div class="card-body">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions justify-center">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div>
+                <div class="card card-compact p-12 ">
+                    <img src="./images/fruit6.png" alt="Shoes" />
+                    <div class="card-body">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions justify-center">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
 </body>
+
 </html>
